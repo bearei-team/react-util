@@ -6,7 +6,10 @@ const AllTheProviders: FC<{children: React.ReactNode}> = ({children}) => {
   return <>{children}</>;
 };
 
-const customRender = (ui: ReactElement, options?: Omit<RenderOptions, 'wrapper' | 'queries'>) =>
+const customRender = (
+  ui: ReactElement,
+  options?: Omit<RenderOptions, 'wrapper' | 'queries'>,
+) =>
   render(ui, {
     wrapper: AllTheProviders,
     queries: {...queries, ...customQueries},
