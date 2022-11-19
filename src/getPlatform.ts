@@ -16,7 +16,7 @@ export const isMobile = () => {
 };
 
 export const getPlatform = () => {
-  if (navigator.product === 'React Native') {
+  if (navigator.product === 'ReactNative') {
     return 'reactNative';
   }
 
