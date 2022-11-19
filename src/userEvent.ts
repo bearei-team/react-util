@@ -2,17 +2,14 @@ import {GestureResponderEvent} from 'react-native';
 import {getPlatform} from './getPlatform';
 
 export type EventType = 'onClick' | 'onPress' | 'onTouchEnd';
-
-export interface Fun {
-  (...args: unknown[]): void;
-}
+export type Fun = () => unknown;
 
 /**
  * 处理事件
  */
 export type HandleEvent =
-  | React.MouseEvent<HTMLButtonElement, MouseEvent>
-  | React.TouchEvent<HTMLButtonElement>
+  | React.MouseEvent<HTMLElement, MouseEvent>
+  | React.TouchEvent<HTMLElement>
   | GestureResponderEvent;
 
 export const handleEvent = (e?: HandleEvent, callback?: Fun) => {
@@ -30,6 +27,6 @@ export const getPlatformEvent = (eventFun?: Fun) => {
   };
 
   return {
-    [event[getPlatform()] as EventType]: eventFun,
-  };
+    [event[getPlatform()]]: eventFun,
+  } as Record<EventType, Fun | undefined>;
 };
