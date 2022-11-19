@@ -21,7 +21,7 @@ export const handleEvent = (e?: HandleEvent, callback?: Fun) => {
 
 export const getPlatformEvent = (eventFun?: Fun) => {
   const event = {
-    nativeApp: 'onPress',
+    reactNative: 'onPress',
     pcBrowser: 'onClick',
     mobileBrowser: 'onTouchEnd',
   };

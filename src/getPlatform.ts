@@ -16,10 +16,8 @@ export const isMobile = () => {
 };
 
 export const getPlatform = () => {
-  const isBrowser = navigator ?? window;
-
-  if (!isBrowser) {
-    return 'nativeApp';
+  if (navigator.product === 'React Native') {
+    return 'reactNative';
   }
 
   return isMobile() ? 'mobileBrowser' : 'pcBrowser';
