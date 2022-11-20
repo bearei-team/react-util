@@ -2,7 +2,7 @@ import {handleEvent, getPlatformEvent} from '../src/userEvent';
 
 describe('test/userEvent.test.ts', () => {
   test('It should be handling user interaction events', async () => {
-    const result = handleEvent(undefined, () => 'callback');
+    const result = handleEvent(() => 'callback')();
 
     expect(result).toEqual('callback');
   });
