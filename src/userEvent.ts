@@ -3,10 +3,7 @@ import {getPlatform} from './getPlatform';
 
 export type EventType = 'onClick' | 'onPress' | 'onTouchEnd';
 export type Fun = () => unknown;
-
-/**
- * 处理事件
- */
+export type EventFun = () => unknown;
 export type HandleEvent =
   | React.MouseEvent<HTMLElement, MouseEvent>
   | React.TouchEvent<HTMLElement>
@@ -19,7 +16,7 @@ export const handleEvent = (e?: HandleEvent, callback?: Fun) => {
   return callback?.();
 };
 
-export const getPlatformEvent = (eventFun?: Fun) => {
+export const getPlatformEvent = (eventFun?: EventFun) => {
   const event = {
     reactNative: 'onPress',
     pcBrowser: 'onClick',
@@ -28,5 +25,5 @@ export const getPlatformEvent = (eventFun?: Fun) => {
 
   return {
     [event[getPlatform()]]: eventFun,
-  } as Record<EventType, Fun | undefined>;
+  } as Record<EventType, EventFun | undefined>;
 };

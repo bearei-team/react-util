@@ -1,6 +1,6 @@
 {
   "name": "@bearei/react-util",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "module": "./lib-esm/index.js",
@@ -84,7 +84,8 @@
     "test": "jest --watchAll --detectOpenHandles",
     "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .jsx,.ts,.tsx",
-    "fix": "yarn lint --fix"
+    "fix": "yarn lint --fix",
+    "publish": "yarn build && yarn npm publish --access public"
   },
   "engines": {
     "node": ">=16.0.0"
