@@ -1,28 +1,29 @@
 import {GestureResponderEvent} from 'react-native';
 import {getPlatform} from './getPlatform';
 
-export type EventType = 'onClick' | 'onPress' | 'onTouchEnd';
-export type HandleEvent =
+export type OnClickEvent = 'onClick' | 'onPress' | 'onTouchEnd';
+export type HandleClickEvent =
   | React.MouseEvent<HTMLElement, MouseEvent>
   | React.TouchEvent<HTMLElement>
   | GestureResponderEvent;
 
-export type EventFun = (e?: HandleEvent) => unknown;
-export const handleEvent = (callback?: EventFun) => (e?: HandleEvent) => {
-  e?.preventDefault?.();
-  e?.stopPropagation?.();
+export type ClickEventFun = (e?: HandleClickEvent) => unknown;
 
-  return callback?.(e);
-};
-
-export const getPlatformEvent = (eventFun?: EventFun) => {
+export const getPlatformClickEvent = (eventFun?: ClickEventFun) => {
   const event = {
     reactNative: 'onPress',
     pcBrowser: 'onClick',
     mobileBrowser: 'onTouchEnd',
   };
 
+  const handleEvent = (callback?: ClickEventFun) => (e?: HandleClickEvent) => {
+    e?.preventDefault();
+    e?.stopPropagation();
+
+    return callback?.(e);
+  };
+
   return {
     [event[getPlatform()]]: handleEvent(eventFun),
-  } as Record<EventType, EventFun | undefined>;
+  } as Record<OnClickEvent, ClickEventFun | undefined>;
 };
