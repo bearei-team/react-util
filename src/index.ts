@@ -1,2 +1,2 @@
-export * from './getPlatform';
+export * from './platform';
 export * from './event';

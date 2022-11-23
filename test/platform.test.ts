@@ -1,4 +1,4 @@
-import {isMobile, getPlatform} from '../src/getPlatform';
+import {isMobile, getPlatform} from '../src/platform';
 
 describe('test/getPlatform.test.ts', () => {
   test('It should be checking the running platform for mobile', async () => {
