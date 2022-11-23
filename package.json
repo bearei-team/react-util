@@ -1,6 +1,6 @@
 {
   "name": "@bearei/react-util",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "module": "./lib-esm/index.js",
@@ -15,10 +15,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bear-ei/react-util"
+    "url": "https://github.com/bearei-team/react-util"
   },
   "bugs": {
-    "url": "https://github.com/bear-ei/react-util/issues"
+    "url": "https://github.com/bearei-team/react-util/issues"
   },
   "dependencies": {
     "react": "^18.2.0"
