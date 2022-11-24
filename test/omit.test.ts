@@ -1,6 +1,6 @@
 import omit from '../src/omit';
 
-describe('test/getPlatform.test.ts', () => {
+describe('test/omit.test.ts', () => {
   test('It should omit the object field', async () => {
     const result = omit({a: 1, b: 2}, ['a']);
 

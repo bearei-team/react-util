@@ -1,6 +1,6 @@
 import platform, {isMobile} from '../src/platform';
 
-describe('test/getPlatform.test.ts', () => {
+describe('test/platform.test.ts', () => {
   test('It should be checking the running platform for mobile', async () => {
     const result = isMobile();
 
