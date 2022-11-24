@@ -4,14 +4,14 @@ export interface PickHTMLAttributesConfig {
   attribute?: boolean;
 }
 
-export function pickHTMLAttributes(
+export const pickHTMLAttributes = (
   props: Record<string, unknown>,
   config = {
     aria: true,
     data: true,
     attribute: true,
   } as PickHTMLAttributesConfig,
-) {
+) => {
   const attributes = [
     'accept',
     'acceptCharset',
@@ -293,20 +293,20 @@ export function pickHTMLAttributes(
   const matchPrefix = (key: string, prefix: string) =>
     key.indexOf(prefix) === 0;
 
-  Object.entries(props).forEach(([key, val]) => {
+  Object.entries(props).forEach(([key, value]) => {
     const aria =
       (config.aria && key === 'role') || matchPrefix(key, ariaPrefix);
 
     const data = config.data && matchPrefix(key, dataPrefix);
     const attr = config.attribute && allProps.includes(key);
 
-    (aria || data || attr) && Object.assign(attrs, {[key]: val});
+    (aria || data || attr) && Object.assign(attrs, {[key]: value});
   });
 
   return attrs;
-}
+};
 
-export function pickNativeAttributes(props: Record<string, unknown>) {
+export const pickNativeAttributes = (props: Record<string, unknown>) => {
   const attributes = [
     'animating',
     'color',
@@ -643,4 +643,4 @@ export function pickNativeAttributes(props: Record<string, unknown>) {
   });
 
   return attrs;
-}
+};
