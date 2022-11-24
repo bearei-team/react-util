@@ -1,4 +1,4 @@
-import {isMobile, getPlatform} from '../src/platform';
+import platform, {isMobile} from '../src/platform';
 
 describe('test/getPlatform.test.ts', () => {
   test('It should be checking the running platform for mobile', async () => {
@@ -8,7 +8,7 @@ describe('test/getPlatform.test.ts', () => {
   });
 
   test('It should be to get the current running platform', async () => {
-    const result = getPlatform();
+    const result = platform();
 
     expect(result).toEqual('pcBrowser');
   });

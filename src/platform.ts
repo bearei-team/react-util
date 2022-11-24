@@ -14,10 +14,12 @@ export const isMobile = () => {
   );
 };
 
-export const getPlatform = () => {
+const platform = () => {
   if (navigator.product === 'ReactNative') {
     return 'reactNative';
   }
 
   return isMobile() ? 'mobileBrowser' : 'pcBrowser';
 };
+
+export default platform;

@@ -1,4 +1,4 @@
-import {handleEvent} from '../src/event';
+import handleEvent from '../src/event';
 
 describe('test/userEvent.test.ts', () => {
   test('It should supposed to be an event', async () => {
