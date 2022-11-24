@@ -1,11 +1,11 @@
 {
   "name": "@bearei/react-util",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "module": "./lib-esm/index.js",
   "author": "bearei <bear_ei@outlook.com>",
-  "description": "A util to support the React base component.",
+  "description": "A common tool for React components",
   "license": "MIT",
   "readmeFilename": "README.md",
   "keywords": [
