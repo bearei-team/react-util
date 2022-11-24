@@ -638,8 +638,8 @@ export const pickNativeAttributes = (props: Record<string, unknown>) => {
   const allProps = [...attributes, ...events];
   const attrs = {} as Record<string, unknown>;
 
-  Object.entries(props).forEach(([key, val]) => {
-    allProps.includes(key) && Object.assign(attrs, {[key]: val});
+  Object.entries(props).forEach(([key, value]) => {
+    allProps.includes(key) && Object.assign(attrs, {[key]: value});
   });
 
   return attrs;
