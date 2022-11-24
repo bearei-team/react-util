@@ -290,8 +290,7 @@ export const pickHTMLAttributes = (
   const dataPrefix = 'data-';
   const attrs = {} as Record<string, unknown>;
 
-  const matchPrefix = (key: string, prefix: string) =>
-    key.indexOf(prefix) === 0;
+  const matchPrefix = (key: string, prefix: string) => key.startsWith(prefix);
 
   Object.entries(props).forEach(([key, value]) => {
     const aria =
