@@ -16,10 +16,10 @@ export const isMobile = () => {
 
 const platform = () => {
   if (navigator.product === 'ReactNative') {
-    return 'reactNative';
+    return 'ReactNative';
   }
 
-  return isMobile() ? 'mobileBrowser' : 'pcBrowser';
+  return isMobile() ? 'MobileBrowser' : 'PcBrowser';
 };
 
 export default platform;
