@@ -19,7 +19,7 @@ const platform = () => {
     return 'ReactNative';
   }
 
-  return isMobile() ? 'MobileBrowser' : 'PcBrowser';
+  return isMobile() ? 'MobileBrowser' : 'PCBrowser';
 };
 
 export default platform;
