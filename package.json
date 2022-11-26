@@ -1,28 +1,26 @@
 {
-  "name": "@bearei/react-icon",
-  "version": "0.0.4",
+  "name": "@bearei/react-util",
+  "version": "0.0.16",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "module": "./lib-esm/index.js",
   "author": "bearei <bear_ei@outlook.com>",
-  "description": "A basic icon component that supports react and native react.",
+  "description": "A common tool for React components",
   "license": "MIT",
   "readmeFilename": "README.md",
   "keywords": [
     "react",
-    "react native",
     "typescript",
-    "icon"
+    "util"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bearei-team/react-icon"
+    "url": "https://github.com/bearei-team/react-util"
   },
   "bugs": {
-    "url": "https://github.com/bearei-team/react-icon/issues"
+    "url": "https://github.com/bearei-team/react-util/issues"
   },
   "dependencies": {
-    "@bearei/react-util": "^0.0.15",
     "react": "^18.2.0"
   },
   "devDependencies": {
