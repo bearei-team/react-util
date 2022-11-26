@@ -10,6 +10,6 @@ describe('test/platform.test.ts', () => {
   test('It should be to get the current running platform', async () => {
     const result = platform();
 
-    expect(result).toEqual('pcBrowser');
+    expect(result).toEqual('PCBrowser');
   });
 });
