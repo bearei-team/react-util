@@ -1,10 +1,29 @@
-import handleEvent from '../src/event';
+import {handleDefaultEvent, bindEvents} from '../src/event';
 
-describe('test/userEvent.test.ts', () => {
-  test('It should supposed to be an event', async () => {
-    const clickEvent = handleEvent(() => 'callback');
+describe('test/event.test.ts', () => {
+  test('It should handle the default event', async () => {
+    const clickEvent = handleDefaultEvent(() => 'callback');
 
     expect(typeof clickEvent).toEqual('function');
     expect(clickEvent({})).toEqual('callback');
+  });
+
+  test('It should be a binding events', async () => {
+    const handleCallback = (key: 'onClick') => {
+      const event = {
+        onClick: handleDefaultEvent(
+          (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+            e;
+          },
+        ),
+      };
+
+      return event[key];
+    };
+    [];
+    const events = ['onClick'] as 'onClick'[];
+    const clickEvent = bindEvents(events, handleCallback);
+
+    expect(typeof clickEvent.onClick).toEqual('function');
   });
 });
