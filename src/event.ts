@@ -2,11 +2,11 @@ export type DefaultEvent = {
   preventDefault?: () => void;
   stopPropagation?: () => void;
 };
-export interface HandleEvent {
+export interface HandleDefaultEvent {
   <T extends DefaultEvent>(callback?: (e: T) => void): (e: T) => void;
 }
 
-export const handleDefaultEvent: HandleEvent =
+export const handleDefaultEvent: HandleDefaultEvent =
   <T extends DefaultEvent>(callback?: (e: T) => void) =>
   (e: T) => {
     e.preventDefault?.();
