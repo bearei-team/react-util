@@ -8,7 +8,7 @@ const omit = <T extends Record<string, unknown>, K extends keyof T>(
     delete nextTarget[key];
   });
 
-  return nextTarget;
+  return nextTarget as Omit<T, K>;
 };
 
 export default omit;
