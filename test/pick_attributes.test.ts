@@ -1,7 +1,7 @@
 import {
   pickHTMLAttributes,
   pickNativeAttributes,
-} from '../src/pickAttributes';
+} from '../src/pick_attributes';
 
 describe('test/pickAttributes.test.ts', () => {
   test('It should be the pick HTML attribute', async () => {
