@@ -1,6 +1,6 @@
 {
   "name": "@bearei/react-util",
-  "version": "0.0.24",
+  "version": "0.0.26",
   "main": "./lib/commonjs/index",
   "module": "./lib/module/index",
   "types": "./lib/commonjs/index.d.ts",
@@ -60,8 +60,7 @@
     "not op_mini all"
   ],
   "files": [
-    "lib",
-    "lib-esm"
+    "lib"
   ],
   "scripts": {
     "build": "yarn clean && cross-env MODE=\"production\" yarn build:cjs && cross-env MODE=\"production\" yarn build:esm",
