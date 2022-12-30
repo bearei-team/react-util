@@ -1,4 +1,4 @@
-import {handleDefaultEvent, bindEvents} from '../src/event';
+import { bindEvents, handleDefaultEvent } from '../src/event';
 
 describe('test/event.test.ts', () => {
   test('It should handle the default event', async () => {
@@ -11,11 +11,9 @@ describe('test/event.test.ts', () => {
   test('It should be a binding events', async () => {
     const handleCallback = (key: 'onClick') => {
       const event = {
-        onClick: handleDefaultEvent(
-          (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
-            e;
-          },
-        ),
+        onClick: handleDefaultEvent((e: unknown) => {
+          e;
+        }),
       };
 
       return event[key];

@@ -1,4 +1,4 @@
-import {isEqual} from '../src/array';
+import { isEqual } from '../src/array';
 
 describe('test/array.test.ts', () => {
   test('It should be array equality', async () => {

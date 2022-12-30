@@ -299,7 +299,7 @@ export const pickHTMLAttributes = (
     const data = config.data && matchPrefix(key, dataPrefix);
     const attr = config.attribute && allProps.includes(key);
 
-    (aria || data || attr) && Object.assign(attrs, {[key]: value});
+    (aria || data || attr) && Object.assign(attrs, { [key]: value });
   });
 
   return attrs;
@@ -638,7 +638,7 @@ export const pickNativeAttributes = (props: Record<string, unknown>) => {
   const attrs = {} as Record<string, unknown>;
 
   Object.entries(props).forEach(([key, value]) => {
-    allProps.includes(key) && Object.assign(attrs, {[key]: value});
+    allProps.includes(key) && Object.assign(attrs, { [key]: value });
   });
 
   return attrs;
