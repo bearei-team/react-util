@@ -1,7 +1,7 @@
 export const isMobile = () => {
   const agent =
-    navigator.userAgent ??
-    navigator.vendor ??
+    navigator?.userAgent ??
+    navigator?.vendor ??
     (window as Window & typeof globalThis & { opera: unknown }).opera;
 
   return (
@@ -15,7 +15,7 @@ export const isMobile = () => {
 };
 
 const platform = () => {
-  if (navigator.product === 'ReactNative') {
+  if (navigator?.product === 'ReactNative') {
     return 'ReactNative';
   }
 
