@@ -9,5 +9,4 @@ export const config: webpack.Configuration = {
     library: { type: 'commonjs' },
   },
   externalsType: 'commonjs',
-  externals: {},
 };

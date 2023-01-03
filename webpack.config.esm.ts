@@ -15,5 +15,4 @@ export const config: webpack.Configuration = {
     outputModule: true,
   },
   externalsType: 'module',
-  externals: {},
 };
