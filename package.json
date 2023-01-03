@@ -1,6 +1,6 @@
 {
   "name": "@bearei/react-util",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "main": "./lib/commonjs/index",
   "module": "./lib/module/index",
   "types": "./lib/commonjs/index.d.ts",
@@ -72,7 +72,7 @@
     "coverage": "yarn test --coverage",
     "lint": "eslint . --ext .jsx,.ts,.tsx",
     "fix": "yarn lint --fix",
-    "publish": "yarn coverage && yarn build && yarn npm publish --access public"
+    "publish": "yarn lint && yarn coverage && yarn build && yarn npm publish --access public"
   },
   "engines": {
     "node": ">=16.0.0"
