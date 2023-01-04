@@ -1,4 +1,4 @@
-export interface PickHTMLAttributesConfig {
+export interface PickHTMLAttributesConfigs {
   aria?: boolean;
   data?: boolean;
   attribute?: boolean;
@@ -6,11 +6,11 @@ export interface PickHTMLAttributesConfig {
 
 export const pickHTMLAttributes = (
   props: Record<string, unknown>,
-  config = {
+  configs = {
     aria: true,
     data: true,
     attribute: true,
-  } as PickHTMLAttributesConfig,
+  } as PickHTMLAttributesConfigs,
 ) => {
   const attributes = [
     'accept',
@@ -294,10 +294,10 @@ export const pickHTMLAttributes = (
 
   Object.entries(props).forEach(([key, value]) => {
     const aria =
-      (config.aria && key === 'role') || matchPrefix(key, ariaPrefix);
+      (configs.aria && key === 'role') || matchPrefix(key, ariaPrefix);
 
-    const data = config.data && matchPrefix(key, dataPrefix);
-    const attr = config.attribute && allProps.includes(key);
+    const data = configs.data && matchPrefix(key, dataPrefix);
+    const attr = configs.attribute && allProps.includes(key);
 
     (aria || data || attr) && Object.assign(attrs, { [key]: value });
   });

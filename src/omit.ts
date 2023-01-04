@@ -1,10 +1,10 @@
 const omit = <T extends Record<string, unknown>, K extends keyof T>(
   target: T,
-  fields: K[],
+  keys: K[],
 ) => {
   const nextTarget = { ...target };
 
-  fields?.forEach(key => {
+  keys?.forEach(key => {
     delete nextTarget[key];
   });
 
