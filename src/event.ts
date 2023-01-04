@@ -20,10 +20,10 @@ export const handleDefaultEvent: HandleDefaultEvent =
 
 export const bindEvents = <T extends string, C = (e: unknown) => void>(
   names: T[],
-  match: (key: T) => C,
+  matchEvent: (key: T) => C,
 ) => {
   const events = {} as Record<T, C>;
-  const bindEvent = (key: T) => ({ [key]: match(key) });
+  const bindEvent = (key: T) => ({ [key]: matchEvent(key) });
 
   names.forEach((key: T) => Object.assign(events, bindEvent(key)));
 
